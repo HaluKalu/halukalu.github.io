@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image cards</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(95, 174, 91);
+            overflow: hidden;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .frame {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: auto;
+            top: 25%;
+            position: relative;
+            background-color: lightgray;
+            overflow: hidden;
+        }
+        .pics{
+            position: relative;
+        }
+        .pic{
+            box-sizing: border-box;
+            height: 100px;
+            width: 100px;
+            border: 2px solid lightgray;
+            transition: .3s;
+            cursor: pointer;
+            position: absolute;
+            z-index:0;
+        }
+        .pic.small > img{
+            filter: blur(1px) brightness(0.64);
+        }
+        .pic.small:hover > img{
+            filter: blur(0);
+        }
+        .pic.small:hover{
+            transform: scale(1.11);
+            filter: blur(0);
+            z-index: 1;
+        }
+        .pic-1{
+            top: 0;
+            left: 0;
+        }
+        .pic-2{
+            top:0;
+            left: 100px;
+        }
+        .pic-3{
+            top:100px;
+            left: 200px;
+        }
+        .pic-4{
+            top: 100px;
+            left: 0;
+        }
+        .pic-5{
+            top:100px;
+            left: 100px;
+        }
+        .pic-6{
+            top:0;
+            left: 200px;
+        }
+        .pic-7{
+            top: 200px;
+            left: 0;
+        }
+        .pic-8{
+            top:200px;
+            left: 100px;
+        }
+        .pic-9{
+            top:200px;
+            left: 200px;
+        }
+        .pic > img{
+            width: 100%;
+            height: auto;
+            transition: 1s;
+        }
+        .pic.big{
+            top: 0;
+            left: 0;
+            width: 300px;
+            z-index: 5;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=39" target="_blank">link</a>
+    <div class="frame">
+        <div class="pics">
+            <div class="pic pic-1 small"><img src="https://100dayscss.com/codepen/40-1.jpg" alt="" /></div>
+            <div class="pic pic-2 small"><img src="https://100dayscss.com/codepen/40-2.jpg" alt="" /></div>
+            <div class="pic pic-3 small"><img src="https://100dayscss.com/codepen/40-3.jpg" alt="" /></div>
+            <div class="pic pic-4 small"><img src="https://100dayscss.com/codepen/40-4.jpg" alt="" /></div>
+            <div class="pic pic-5 small"><img src="https://100dayscss.com/codepen/40-5.jpg" alt="" /></div>
+            <div class="pic pic-6 small"><img src="https://100dayscss.com/codepen/40-6.jpg" alt="" /></div>
+            <div class="pic pic-7 small"><img src="https://100dayscss.com/codepen/40-7.jpg" alt="" /></div>
+            <div class="pic pic-8 small"><img src="https://100dayscss.com/codepen/40-8.jpg" alt="" /></div>
+            <div class="pic pic-9 small"><img src="https://100dayscss.com/codepen/40-9.jpg" alt="" /></div>
+        </div>
+    </div>
+    <script>
+        let elem = document.querySelectorAll('.pic');
+        for(let i = 0; i < elem.length; i++){
+            elem[i].addEventListener('click', function(){
+                elem[i].classList.toggle('big');
+                elem[i].classList.toggle('small');                
+            });
+        }
+    </script>
+</body>
+
+</html>

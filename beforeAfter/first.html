@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu toggle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        @keyframes top-close {
+            0% {
+                width: 50px;
+                left: 125px;
+                top: 0;
+                border-width: 5px;
+            }
+            15%{
+                width: 40px;
+                left: 130px;
+                top: 5px;
+                border-width: 7px;
+            }
+            35%{
+                top: -30px;
+                border-width: 3px;
+            }
+            100% {
+                border-width: 3px;                
+                width: 100%;
+                left: 0px;
+                top: -30px;
+            }
+        }
+
+        @keyframes top-open {
+            0% {
+                width: 100%;
+                left: 0px;
+                top: -30px;
+                border-width: 3px;                
+            }
+            80%{
+                border-width: 3px;                
+                width: 50px;
+                left: 125px;
+                top: -30px;
+            }
+            100% {
+                border-width: 5px;                
+                width: 50px;
+                left: 125px;
+                top: 0;
+            }
+            
+        }
+
+        @keyframes bottom-close {
+            0% {
+                border-width: 5px;                
+                width: 50px;
+                left: 125px;
+                bottom: 0;
+            }
+            15%{
+                border-width: 7px;                
+                width: 40px;
+                left: 130px;
+                bottom: 5px;
+            }
+            35%{
+                border-width: 3px;                
+                bottom: -30px;                
+            }
+            100% {
+                border-width: 3px;                
+                width: 100%;
+                left: 0px;
+                bottom: -30px;
+            }
+        }
+
+        @keyframes bottom-open {
+            100% {
+                width: 50px;
+                left: 125px;
+                bottom: 0;
+                border-width: 5px;                
+            }
+            80%{
+                width: 50px;
+                left: 125px;
+                bottom: -30px;
+                border-width: 3px;                
+            }
+            0% {
+                border-width: 3px;                
+                width: 100%;
+                left: 0px;
+                bottom: -30px;
+            }
+        }
+
+        @keyframes menu-open {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes menu-close {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: violet;
+            overflow: hidden;
+        }
+
+        .frame {
+            width: 300px;
+            height: 300px;
+            background-color: blueviolet;
+            position: relative;
+            margin: auto;
+            top: 25%;
+        }
+
+        .frame>div {
+            position: absolute;
+            width: 300px;
+            box-sizing: border-box;
+            margin: auto 0;
+            top: calc(50% - 1rem);
+            cursor: pointer;
+        }
+
+        .menu {
+            top: 109px!important;
+            padding: 27px 0;
+            background-color: rgb(146, 66, 221);
+        }
+
+        .frame.active>.menu {
+            display: block;
+            animation: menu-open 1s ease both;
+            animation-delay: 0.5s;
+        }
+
+        .menu-icon {
+            display: block;
+            height: 30px;
+            width: 100%;
+            position: relative;
+        }
+
+        .menu-icon::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 50px;
+            left: calc(50% - 25px);
+            bottom: 0;
+            border-bottom: 5px solid rgb(244, 244, 244);
+            animation: bottom-open 1s ease both;
+        }
+
+        .menu-icon::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 50px;
+            left: calc(50% - 25px);
+            border-bottom: 5px solid rgb(244, 244, 244);
+            animation: top-open 1s ease both;
+        }
+
+        .frame.active>.menu-icon::before {
+            animation: top-close 1s ease both;
+        }
+
+        .frame.active>.menu-icon::after {
+            animation: bottom-close 1s ease both;
+        }
+
+        .frame:not(.active)>.menu {
+            animation: menu-close 0.5s ease both;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            margin: 0 12px;
+            font-size: 1.5rem;
+            color: lightgray;
+        }
+
+        li:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a style="color: black; text-decoration:none;" href="https://100dayscss.com/?dayIndex=38" target="_blank">link</a></p>
+    <div class="frame" onclick="toggler()">
+        <div class="menu-icon paused">
+            <div class="line-top"></div>
+            <div class="line-bottom"></div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <span>Home</span>
+                </li>
+                <li>
+                    <span>Work</span>
+                </li>
+                <li>
+                    <span>Life</span>
+                </li>
+                <li>
+                    <span>Spirit</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function toggler() {
+            document.getElementsByClassName('frame')[0].classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

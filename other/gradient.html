@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gradient</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(90, 90, 90);
+            overflow: hidden;
+        }
+
+        .frame {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: auto;
+            top: 25%;
+            position: relative;
+            background-color: #006652;
+            clip-path: circle(150px at 150px 150px);
+        }
+
+        .grad1 {
+            position: absolute;
+            top: 145px;
+            left: 145px;
+            background-color: #18BA9A;
+            border-radius: 50%;
+            height: 10px;
+            width: 10px;
+            box-shadow: 0 0 10px 10px #18BA9A;
+            z-index: 3;
+            animation: gr1 2s linear infinite alternate;
+        }
+
+        .grad2 {
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 135px;
+            left: 135px;
+            background-color: #00A786;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 30px #00A786;
+            z-index: 2;
+            animation: gr2 2s linear infinite alternate;
+        }
+
+        .grad3 {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 125px;
+            left: 125px;
+            background-color: #008369;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 50px #008369;
+            z-index: 1;
+            animation: gr3 2s linear infinite alternate;
+
+        }
+
+        @keyframes gr1 {
+            0% {
+                height: 10px;
+                width: 10px;
+                box-shadow: 0 0 10px 10px #18BA9A;
+                background-color: #18BA9A;
+                top: 145px;
+                left: 145px;
+            }
+            100% {
+                height: 70px;
+                width: 70px;
+                top: 115px;
+                left: 115px;
+                background-color: #008369;
+                box-shadow: 0 0 10px 70px #008369;
+            }
+        }
+
+        @keyframes gr2 {
+            0% {
+                height: 30px;
+                width: 30px;
+                box-shadow: 0 0 10px 30px #00A786;
+                top: 135px;
+                left: 135px;
+            }
+            100% {
+                height: 110px;
+                width: 110px;
+                top: 95px;
+                left: 95px;
+                box-shadow: 0 0 10px 110px #008369;
+            }
+        }
+
+        @keyframes gr3 {
+            0% {
+                height: 50px;
+                width: 50px;
+                box-shadow: 0 0 10px 50px #008369;
+                top: 125px;
+                left: 125px;
+            }
+            100% {
+                height: 130px;
+                width: 130px;
+                top: 85px;
+                left: 85px;
+                box-shadow: 0 0 10px 130px #008369;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="grad1"></div>
+        <div class="grad2"></div>
+        <div class="grad3"></div>
+
+    </div>
+</body>
+
+</html>

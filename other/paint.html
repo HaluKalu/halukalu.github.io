@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Paint</title>
+	<style id="style">
+		@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			width: 100%;
+			height: 100vh;
+			background-color: rgb(0, 0, 0);
+			overflow: hidden;
+			font-family: 'Open Sans', Helvetica, sans-serif;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		.frame {
+			width: 400px;
+			height: 400px;
+			position: relative;
+			margin: auto;
+			top: 20%;
+			position: relative;
+			background-color: rgb(211, 211, 211);
+		}
+		#squares{
+			width: 100%;
+			height: 100%;
+			position: relative;
+            display: flex;
+            flex-wrap: wrap;
+		}
+
+		.rect {
+			box-sizing: border-box;
+			border: 1px solid #888;
+            width: 40px;
+            height: 40px;
+		}
+        .rect.selected {
+            background-color: red;
+        }
+        .rect.white {
+            background-color: white;
+        }
+	</style>
+</head>
+
+<body>
+	<p>
+		<a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=46" target="_blank">link</a>
+	</p>
+	<div class="frame">
+		<div id="squares"></div>
+	</div>
+	<script id='removable'>
+		function genSquares(root) {
+			let block = document.getElementById(root);
+			let styles = document.getElementById('style');
+			for (var i = 0; i < 100; i++) {
+				let square = document.createElement('div');
+				square.classList.add('rect');
+				square.classList.add(`selected`);
+				square.addEventListener('click', function(){this.classList.toggle('selected'); this.classList.toggle('white')});
+				block.appendChild(square);
+			}
+		}
+
+		genSquares('squares');
+		document.getElementById('removable').remove();
+	</script>
+</body>
+
+</html>

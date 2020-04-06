@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Light blob</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(90, 90, 90);
+            overflow: hidden;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .frame {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: auto;
+            top: 20%;
+            position: relative;
+            /* background-color: rgb(43, 43, 43); */
+            background: url('https://100dayscss.com/codepen/slice-image-2.jpg');
+            background-size: contain;
+            overflow: hidden;
+        }
+        .slices{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .slice{
+            background-image: url('https://100dayscss.com/codepen/slice-image-1.jpg');
+            background-size: 400px 400px;
+            width: 50px;
+            height: 400px;
+            transition: 1s;
+            top: 0;
+            opacity: 1;
+            float: left;
+        }
+        .slices:hover > .slice1, .slices:hover > .slice3, .slices:hover > .slice5,  .slices:hover > .slice7{
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+        .slices:hover > .slice2, .slices:hover > .slice4, .slices:hover > .slice6,  .slices:hover > .slice8{
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        
+        .slice1{
+            left: 0;
+        }
+        .slice2{
+            left: 50px;
+            background-position-x: -50px;
+        }
+        .slice3{
+            left: 100px;
+            background-position-x: -100px;
+        }
+        .slice4{
+            left: 150px;
+            background-position-x: -150px;
+        }
+        .slice5{
+            left: 200px;
+            background-position-x: -200px;
+        }
+        .slice6{
+            left: 250px;
+            background-position-x: -250px;
+        }
+        .slice7{
+            left: 300px;
+            background-position-x: -300px;
+        }
+        .slice8{
+            left:350px;
+            background-position-x: -350px;
+        }
+        .text{
+            position: absolute;
+            width: 400px;
+            color: white;
+            top: 130px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            opacity: 1;
+            text-align: center;
+        }
+        h1, h2{
+            opacity: 1;
+            transition: 1s ease-out;
+        }
+        .slices:hover h1{
+            transform: translateX(-40px);
+            opacity: 0;
+        }
+        .slices:hover h2{
+            transform: translateX(40px);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=58" target="_blank">link</a>
+    </p>
+    <div class="frame">
+        <div class="slices">
+            <div class="slice slice1"></div>
+            <div class="slice slice2"></div>
+            <div class="slice slice3"></div>
+            <div class="slice slice4"></div>
+            <div class="slice slice5"></div>
+            <div class="slice slice6"></div>
+            <div class="slice slice7"></div>
+            <div class="slice slice8"></div>
+            <div class="text">
+                <h1>Slice</h1>
+                <h2>transition</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

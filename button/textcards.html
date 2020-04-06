@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cards</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(224, 255, 85);
+            overflow: hidden;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .frame {
+            padding-top: 5px;
+            box-sizing: border-box;
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: auto;
+            top: 15%;
+            position: relative;
+            background-color: rgb(150, 150, 150);
+            transform: perspective(60px);
+            transform-style: preserve-3d;
+            z-index:1;
+        }
+
+        .card {
+            position: absolute;
+            height: 170px;
+            width: 250px;
+            left: 75px;
+            top: 100px;
+            background-color: white;
+            text-align: center;
+            box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.507);
+            border-radius: 3px;
+            opacity: 0;
+        }
+
+        .card .number {
+            position: absolute;
+            top: 1px;
+            right: 7px;
+            font-size: 13px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .card .number-bg {
+            background-color: rgb(106, 106, 106);
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 35px;
+            width: 35px;
+            border-top-right-radius: 2px;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+
+        .card .text {
+            position: absolute;
+            top: 30px;
+            color: gray;
+            font-size: 0.8rem;
+            left: 30px;
+        }
+
+        .card .text .headline {
+            font-weight: 800;
+            font-size: 1.2em;
+        }
+
+        .card .text>p {
+            margin-top: 10px;
+        }
+
+        .card .button {
+            position: absolute;
+            box-sizing: border-box;
+            bottom: 0;
+            height: 40px;
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(92, 92, 255);
+            cursor: pointer;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            transition: .5s;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .card .button:hover {
+            background-color: rgb(71, 71, 250);
+        }
+
+        .card.active {
+            opacity: 1;
+            z-index:5;
+            animation: wake-up .5s cubic-bezier(0.46, 0.51, 0.66, 0.99) both;
+        }
+
+        .card.inactive {
+            animation: go-sleep .5s cubic-bezier(0.46, 0.51, 0.66, 0.99) both;
+        }
+
+        @keyframes wake-up {
+            0% {
+                transform: scale(0);
+            }
+            70% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes go-sleep {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+                z-index: 5;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+                z-index: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+        <a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=25" target="_blank">link</a>
+    <div class="frame">
+        <div class="card active">
+            <div class="number-bg"></div>
+            <div class="number">1</div>
+            <div class="text">
+                <span class="headline">The couch</span>
+                <p>If you want to grow, get outside
+                    <br/> your comfort zone.</p>
+            </div>
+            <div class="button">Ok</div>
+        </div>
+        <div class="card">
+            <div class="number-bg"></div>
+            <div class="number">2</div>
+            <div class="text">
+                <span class="headline">Failing is learning</span>
+                <p>Pick yourself up, dust yourself off,
+                    <br/> and start again.</p>
+            </div>
+            <div class="button">Ok</div>
+        </div>
+        <div class="card">
+            <div class="number-bg"></div>
+            <div class="number">3</div>
+            <div class="text">
+                <span class="headline">Flowers and rainbows</span>
+                <p>Always be yourself,
+                    <br/> unless you can be a unicorn.</p>
+            </div>
+            <div class="button">Ok</div>
+        </div>
+    </div>
+    <script>
+        let cards = document.querySelectorAll('.card');
+        let btns = document.querySelectorAll('.card > .button');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                cards[i].classList.remove('active');
+                cards[i].classList.add('inactive');
+                if (i == btns.length - 1) {
+                    cards[0].classList.toggle('active');
+                    cards[0].classList.remove('inactive');
+                }
+                else {
+                    cards[i + 1].classList.toggle('active');
+                    cards[i + 1].classList.remove('inactive');
+                }
+                console.log(i);
+            });
+        }
+    </script>
+</body>
+
+</html>

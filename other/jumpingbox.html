@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jumping box</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(22, 22, 41);
+            overflow: hidden;
+        }
+
+        .frame {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: auto;
+            top: 20%;
+            position: relative;
+            background-color: rgb(51, 77, 163);
+        }
+        .box{
+            background-color: white;
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            top: 50%;
+            left: 150px;
+            z-index: 2;
+            transform-origin: 50% 50%;
+            animation: box 1.6s cubic-bezier(0.89, 0.38, 0.37, 0.3) infinite;
+        }
+        .shadow{
+            height: 40px;
+            width: 120px;
+            background-color: rgba(7, 25, 88, 0.44);
+            position: absolute;
+            top: calc(50% + 75px);
+            left: 140px;
+            z-index: 1;
+            border-radius: 50%;
+            animation: shadow 1.6s cubic-bezier(0.89, 0.38, 0.37, 0.3) infinite;
+        }
+        @keyframes box {
+            0%{
+                top: 50%;
+                transform: rotate(0) scale(1);
+            }
+            10%{
+                top: 30%;
+                transform: rotate(0) scale(1);
+            }
+            40%{
+                top: 30%;
+                transform: rotate(360deg) scale(1);
+            }
+            50%{
+                top: 50%;
+                transform: rotate(360deg) scale(1);
+            }
+            60%{
+                top: 55%;
+                transform: rotate(360deg) scale(2.5, 0.4);
+            }
+            100%{
+                transform: rotate(360deg) scale(1);
+            }
+        }
+        @keyframes shadow {
+            0%{
+                transform:scale(1);
+            }
+            10%{
+                transform: scale(0.5);
+            }
+            40%{
+                transform: scale(0.5);
+            }
+            50%{
+                transform: scale(1);
+            }
+            60%{
+                transform: scale(2.5, 0.4);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+        <p><a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=95" target="_blank">link</a></p>
+    <div class="frame">
+        <div class="box"></div>
+        <div class="shadow"></div>
+    </div>
+</body>
+
+</html>

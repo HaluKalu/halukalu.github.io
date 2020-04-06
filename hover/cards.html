@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Price cards</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(204, 204, 204);
+            overflow: hidden;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .frame {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: auto;
+            top: 20%;
+            position: relative;
+            background-size: contain;
+            overflow: hidden;
+            background-color: rgb(238, 236, 236);
+        }
+
+        .plan {
+            height: 160px;
+            width: 110px;
+            float: left;
+            margin: 5px;
+            margin-top: 30px;
+            border-radius: 3px;
+            z-index: 1;
+            transition: .3s;
+            cursor: pointer;
+            box-shadow: 5px 5px 10px 0 rgba(73, 73, 73, 0.562);
+            background-color: white;
+        }
+
+        .plan.basic {
+            margin-left: 25px;
+        }
+
+        .plan.premium {
+            margin-right: 25px;
+        }
+
+        .plan>.title {
+            color: white;
+            background-color: #7DD0ED;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 5px;
+            border-top-right-radius: 3px;
+            border-top-left-radius: 3px;
+        }
+
+        .plan>.price {
+            color: rgb(94, 94, 94);
+            font-weight: 900;
+            font-size: 1.8rem;
+            text-align: center;
+            line-height: 25px;
+            padding-top: 16px;
+            transition: .3s;
+        }
+
+        .plan>.price>span {
+            font-weight: 500;
+            font-size: 1rem;
+            display: block;
+        }
+
+        .plan:hover {
+            transform: scale(1.1);
+            z-index: 2;
+        }
+
+        .plan:hover>.title {
+            background-color: #27A6D2;
+        }
+
+        .plan:hover>.price {
+            color: #27A6D2;
+        }
+
+        .lines>.line {
+            height: 3px;
+            background-color: lightgray;
+            margin: 5px auto;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .datas {
+            background-color: white;
+            position: absolute;
+            box-sizing: border-box;
+            width: 94%;
+            height: 40%;
+            bottom: 5%;
+            left: 3%;
+            padding: 5%;
+            box-shadow: 5px 5px 10px 0 rgba(73, 73, 73, 0.562);
+        }
+
+        .data {
+            position: absolute;
+            top: 10px;
+            width: 90%;
+            font-size: 12px;
+            font-weight: 100;
+        }
+
+        .data.users {}
+
+        .data.gb {
+            top: 60px;
+        }
+
+        .data.projects {
+            top: 110px;
+        }
+        .data > .line{
+            height: 10px;
+            width: 100%;
+            background-color: rgb(223, 223, 223);
+            margin-top: 7%;
+            border-radius: 6px;
+        }
+        .data > .line{
+            overflow: hidden;
+        }
+        .line > .fill{
+            height: 10px;
+            width: 0%;
+            /* border-radius: 6px; */
+            background-color: #7DD0ED;
+            transition: .5s;
+        }
+        .plan.basic:hover ~ .datas .users .fill{
+            width: 10%;
+        }
+        .plan.basic:hover ~ .datas .gb .fill{
+            width: 20%;
+        }
+        .plan.basic:hover ~ .datas .projects .fill{
+            width: 10%;
+        }
+        .plan.pro:hover ~ .datas .users .fill{
+            width: 30%;
+        }
+        .plan.pro:hover ~ .datas .gb .fill{
+            width: 40%;
+        }
+        .plan.pro:hover ~ .datas .projects .fill{
+            width: 40%;
+        }
+        .plan.premium:hover ~ .datas .users .fill{
+            width: 100%;
+        }
+        .plan.premium:hover ~ .datas .gb .fill{
+            width: 100%;
+        }
+        .plan.premium:hover ~ .datas .projects .fill{
+            width: 100%;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <p>
+        <a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=58" target="_blank">link</a>
+    </p>
+    <div class="frame">
+
+        <div class="plan basic" onclick="void(0);">
+            <div class="title">Basic</div>
+            <div class="price">$5
+                <span>per month</span>
+            </div>
+            <div class="lines">
+                <div class="line" style="width: 69px;"></div>
+                <div class="line" style="width: 59px;"></div>
+                <div class="line" style="width: 66px;"></div>
+                <div class="line" style="width: 46px;"></div>
+            </div>
+        </div>
+
+        <div class="plan pro" onclick="void(0);">
+            <div class="title">Pro</div>
+            <div class="price">$10
+                <span>per month</span>
+            </div>
+            <div class="lines">
+                <div class="line" style="width: 69px;"></div>
+                <div class="line" style="width: 59px;"></div>
+                <div class="line" style="width: 66px;"></div>
+                <div class="line" style="width: 46px;"></div>
+            </div>
+        </div>
+
+        <div class="plan premium" onclick="void(0);">
+            <div class="title">Premium</div>
+            <div class="price">$20
+                <span>per month</span>
+            </div>
+            <div class="lines">
+                <div class="line" style="width: 69px;"></div>
+                <div class="line" style="width: 59px;"></div>
+                <div class="line" style="width: 66px;"></div>
+                <div class="line" style="width: 46px;"></div>
+            </div>
+        </div>
+
+        <div class="datas">
+
+            <div class="data users">
+                <div class="text">
+                    <span class="left">5 Users</span>
+                    <span class="right">100 Users</span>
+                </div>
+                <div class="line">
+                    <div class="fill"></div>
+                </div>
+            </div>
+
+            <div class="data gb">
+                <div class="text">
+                    <span class="left">20 GB</span>
+                    <span class="right">200 GB</span>
+                </div>
+                <div class="line">
+                    <div class="fill"></div>
+                </div>
+            </div>
+
+            <div class="data projects">
+                <div class="text">
+                    <span class="left">1 Project</span>
+                    <span class="right">50 Projects</span>
+                </div>
+                <div class="line">
+                    <div class="fill"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date cards</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(90, 90, 90);
+            overflow: hidden;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .frame {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: auto;
+            top: 20%;
+            position: relative;
+            background-color: black;
+        }
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card{
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            background-color: #E27474;
+            text-align: center;
+            transition: .5s;
+            cursor: crosshair;
+            position: relative;
+        }
+        .card:hover{
+            transform: scale(0.9);
+        }
+        .card .text{
+            position: absolute;
+            font-weight: 100;
+            font-size: 22px;
+            color: white;
+            top: 30px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        .card .number{
+            position: absolute;
+            font-weight: 600;
+            font-size: 42px;
+            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=69" target="_blank">link</a>
+    </p>
+    <div class="frame">
+        <div class="cards">
+            <div class="card" onclick="void(0);">
+                <span class="text">Friday</span>
+                <span class="number">15</span>
+            </div>
+            <div class="card" onclick="void(0);">
+                <span class="text">Saturday</span>
+                <span class="number">16</span>
+            </div>
+            <div class="card" onclick="void(0);">
+                <span class="text">Sunday</span>
+                <span class="number">17</span>
+            </div>
+            <div class="card" onclick="void(0);">
+                <span class="text">Monday</span>
+                <span class="number">18</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

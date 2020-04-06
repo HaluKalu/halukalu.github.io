@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image cards</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(91, 174, 174);
+            overflow: hidden;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .frame {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: auto;
+            top: 20%;
+            position: relative;
+            background-color: rgb(58, 7, 99);
+            overflow: hidden;
+        }
+
+        .cards {
+            height: 100%;
+            transform: perspective(60px);
+            transform-style: preserve-3d;
+        }
+
+        .card {
+            position: absolute;
+            top: 30%;
+            height: 150px;
+            width: 120px;
+            left: 160px;
+            background-color: rgb(238, 238, 238);
+        }
+        .card > .title {
+            height: 30px;
+            width: 100%;
+            background-color: coral;
+        }
+
+        .card-1 {
+            animation: switch-1 6s cubic-bezier(0.9, -0.13, 1, 1) both infinite;
+        }
+        .card-2 {
+            animation: switch-2 6s cubic-bezier(0.9, -0.13, 1, 1) both infinite;
+        }
+        .card-3 {
+            animation: switch-3 6s cubic-bezier(0.9, -0.13, 1, 1) both infinite;
+        }
+
+
+        @keyframes switch-1 {
+            0%,
+            100% {
+                transform: translate3d(0, 0, 0);
+                box-shadow: 4px 8px 12px 0px rgba(0, 0, 0, 0.2);
+            }
+            33.33% {
+                transform: translate3d(145px, 0, -45px);
+                box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.2);
+            }
+            66.66% {
+                transform: translate3d(-145px, 0, -45px);
+                box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes switch-2 {
+            0%,
+            100% {
+                transform: translate3d(145px, 0, -45px);
+                box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.2);
+            }
+            33.33% {
+                transform: translate3d(-145px, 0, -45px);
+                box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.2);
+            }
+            66.66% {
+                transform: translate3d(0, 0, 0);
+                box-shadow: 4px 8px 12px 0px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes switch-3 {
+            0%,
+            100% {
+                transform: translate3d(-145px, 0, -45px);
+                box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.2);
+            }
+            33.33% {
+                transform: translate3d(0, 0, 0);
+                box-shadow: 4px 8px 12px 0px rgba(0, 0, 0, 0.2);
+            }
+            66.66% {
+                transform: translate3d(145px, 0, -45px);
+                box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=36" target="_blank">link</a>
+    <div class="frame">
+        <div class="cards">
+            <div class="card card-1">
+                <div class="title">txt1</div>
+            </div>
+            <div class="card card-2">
+                <div class="title">txt2</div>
+            </div>
+            <div class="card card-3">
+                <div class="title">txt3</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(90, 90, 90);
+            overflow: hidden;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .frame {
+            padding-top: 5px;
+            box-sizing: border-box;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: auto;
+            top: 25%;
+            position: relative;
+            background-color: #E16D6C;
+            transform: perspective(60px);
+            transform-style: preserve-3d;
+        }
+
+        .circle, .line, .line, .bracket, .small, .big, .small, .hide{
+            position: absolute;
+            color: white;
+            text-transform: uppercase;
+        }
+        .small{
+            font-size: 32px;
+            font-weight: 200;
+            width: 100%;
+            text-align: center;
+        }
+        .small.top{
+            top: 70px;
+            animation: text-left .5s both 1.5s;
+        }
+        .small.bottom{
+            top: 170px;
+            animation-delay: 2s;
+            animation: text-right .5s both 1.5s;
+        }
+        .big{
+            top: 110px;
+            font-size: 50px;
+            font-weight: 800;
+            width: 100%;
+            text-align: center;
+            animation: text-main .7s both 0.8s;
+        }
+        .bracket{
+            border: 4px solid white;
+            top: 111px;
+            height: 60px;
+            width: 20px;
+            animation: brackets .5s both 1.5s;
+            opacity: 0;
+        }
+        .bracket.left{
+            left: 10px;
+            border-right: none;
+        }
+        .bracket.right{
+            right: 10px;
+            border-left: none;
+        }
+        .circle{
+            height: 50px;
+            width: 50px;
+            top: 125px;
+            left: 125px;
+            border-radius: 50%;
+            background-color: white;
+            animation: circle 1s both;
+        }
+        .line{
+            width: 3px;
+            height: 68px;
+            background-color: white;
+            top: 111px;
+            transform-origin: 50% 50%;
+            animation: expand-lines .7s both 0.8s;
+        }
+        .line.left{
+            left: 10px;
+        }
+        .line.right{
+            right: 10px;
+        }
+    </style>
+    <style>
+        @keyframes text-left {
+            0%{
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes text-right {
+            0%{
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes text-main {
+            0%{
+                clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+            }
+            100%{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+        @keyframes brackets {
+            0%{
+                opacity: 0;
+                width: 0;
+            }
+            1%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 1;
+                width: 20px;
+            }
+        }
+        @keyframes circle {
+            0%{
+                transform: scale(1);
+            }
+            20%{
+                transform: scale(1.2);                
+                /* opacity: 1; */
+            }
+            100%{
+                transform: scale(0);
+                /* opacity: 0; */
+            }
+        }
+        @keyframes expand-lines {
+            0%{
+                transform: scaleY(0);
+            }
+            100%{
+                transform: scaleY(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=22" target="_blank">link</a>
+    <div class="frame">
+        <div class="circle"></div>
+        <div class="line left"></div>
+        <div class="line right"></div>
+        <div class="bracket left"></div>
+        <div class="bracket right"></div>
+        <div class="small top">collect</div>
+        <div class="big">moments</div>
+        <div class="small bottom">not things</div>
+        <div class="hide top"></div>
+        <div class="hide bottom"></div>
+    </div>
+
+</body>
+
+</html>
