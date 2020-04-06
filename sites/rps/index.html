@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rock, Paper, Scissors, Lizard, Spock</title>
+	<link rel='stylesheet' href='./public/stylesheets/style.css' />
+	<link rel='stylesheet' href='./public/stylesheets/app.css' />
+</head>
+
+<body>
+	<div class="container">
+		<div class="title">
+			<div class="logo"></div>
+			<div class="score">score
+				<span id="score">0</span>
+			</div>
+		</div>
+		<div class="steps">
+			<div class="start active">
+				<div class="img img1" onclick="choose('0')"></div>
+				<div class="img img2" onclick="choose('1')"></div>
+				<div class="img img3" onclick="choose('2')"></div>
+				<div class="img img4" onclick="choose('3')"></div>
+				<div class="img img5" onclick="choose('4')"></div>
+				<div class="pentagon"></div>
+			</div>
+			<div class="middle inactive">
+				<div class="user">
+					<p class="text">You picked</p>
+					<div class="img-picked"></div>
+				</div>
+				<div class="result">
+					<p class="text"></p>
+					<div class="button" onclick="reset()">Play again</div>
+				</div>
+				<div class="comp">
+					<p class="text">The house picked</p>
+					<div class="img-picked"></div>
+				</div>
+			</div>
+		</div>
+		<div class="rules-button">rules</div>
+		<div class="rules">
+			<div class="block">
+				<p class="text">Rules</p>
+				<div class="close">×</div>
+				<div class="content"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+	const a=['you\x20win','querySelectorAll','rules','score','warn','rules-button','addEventListener','lizard','querySelector','apply','info','.middle\x20.comp\x20.img-picked','paper','classList','error','return\x20(function()\x20','exception','table','trace','log','.result','console','toggle','.middle\x20.user\x20.img-picked','click','innerHTML','img','rock','start','getElementsByClassName','innerText','middle','active','Wrong\x20choose.\x20Pls\x20don`t\x20break\x20the\x20game','draw','you\x20lose','floor','add','getElementById','inactive'];(function(b,c){const d=function(g){while(--g){b['push'](b['shift']());}};d(++c);}(a,0xd9));const b=function(c,d){c=c-0x0;let e=a[c];return e;};const d=function(){let e=!![];return function(f,g){const h=e?function(){if(g){const i=g[b('0x20')](f,arguments);g=null;return i;}}:function(){};e=![];return h;};}();const c=d(this,function(){const e=function(){};const f=function(){let h;try{h=Function(b('0x26')+'{}.constructor(\x22return\x20this\x22)(\x20)'+');')();}catch(i){h=window;}return h;};const g=f();if(!g['console']){g[b('0x4')]=function(h){const i={};i[b('0x2')]=h;i['warn']=h;i['debug']=h;i[b('0x21')]=h;i[b('0x25')]=h;i[b('0x27')]=h;i[b('0x0')]=h;i[b('0x1')]=h;return i;}(e);}else{g[b('0x4')]['log']=e;g[b('0x4')][b('0x1b')]=e;g[b('0x4')]['debug']=e;g['console'][b('0x21')]=e;g[b('0x4')]['error']=e;g[b('0x4')]['exception']=e;g[b('0x4')][b('0x0')]=e;g[b('0x4')][b('0x1')]=e;}});c();let score=0x0;let choosenName='';let compChoose;let scoreElem=document[b('0x15')](b('0x1a'));function setScore(){scoreElem[b('0xd')]=score;}let names=['spock','scissors',b('0x23'),b('0xa'),b('0x1e')];function choose(e){if(e<0x0||e>0x4){alert(b('0x10'));return;}choosenName=names[e];document[b('0xc')](b('0xb'))[0x0]['classList'][b('0x5')](b('0xf'));document[b('0xc')](b('0xb'))[0x0][b('0x24')][b('0x5')](b('0x16'));document[b('0xc')](b('0xe'))[0x0]['classList'][b('0x5')]('active');document[b('0xc')](b('0xe'))[0x0][b('0x24')][b('0x5')](b('0x16'));document[b('0x18')]('.middle\x20.user\x20.img-picked')[0x0][b('0x24')][b('0x14')](b('0x9'));document[b('0x18')](b('0x6'))[0x0][b('0x24')][b('0x14')](b('0x9')+(parseInt(e)+0x1));compChoose=Math[b('0x13')](Math['random']()*0x5);setTimeout(()=>{document[b('0x18')](b('0x22'))[0x0][b('0x24')][b('0x5')]('img');document[b('0x18')](b('0x22'))[0x0][b('0x24')]['toggle'](b('0x9')+(compChoose+0x1));let f=compareChoose(parseInt(e),compChoose);if(f)score++;else if(parseInt(e)!=compChoose)score--;document[b('0x1f')]('.result\x20.text')[b('0x8')]=f?b('0x17'):parseInt(e)==compChoose?b('0x11'):b('0x12');document[b('0x1f')](b('0x3'))[b('0x24')][b('0x5')]('active');setScore();},0x3e8);}function compareChoose(e,f){if((e+0x1)%0x5===f){return!![];}if((e+0x3)%0x5===f){return!![];}return![];}function openRules(e){document['getElementsByClassName'](b('0x19'))[0x0][b('0x24')][b('0x5')]('active');}function reset(){document[b('0x1f')](b('0x3'))[b('0x24')]['toggle'](b('0xf'));document[b('0xc')](b('0xb'))[0x0][b('0x24')]['toggle'](b('0xf'));document[b('0xc')](b('0xb'))[0x0][b('0x24')][b('0x5')](b('0x16'));document[b('0xc')](b('0xe'))[0x0][b('0x24')][b('0x5')](b('0xf'));document[b('0xc')](b('0xe'))[0x0][b('0x24')]['toggle']('inactive');document['querySelectorAll'](b('0x22'))[0x0][b('0x24')]['toggle'](b('0x9'));document[b('0x18')](b('0x22'))[0x0][b('0x24')][b('0x5')](b('0x9')+(compChoose+0x1));document[b('0x18')](b('0x6'))[0x0][b('0x24')]['remove'](b('0x9'));for(var e=0x0;e<0x5;e++){document[b('0x18')](b('0x6'))[0x0][b('0x24')]['remove'](b('0x9')+(e+0x1));}}document[b('0xc')](b('0x1c'))[0x0][b('0x1d')](b('0x7'),openRules);document[b('0x18')]('.rules')[0x0][b('0x1d')](b('0x7'),openRules);</script>
+</body>
+
+</html>

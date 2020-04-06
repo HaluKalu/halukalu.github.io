@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Social media links</title>
+	<link rel="stylesheet" href="./public/stylesheets/style.css">
+	<link rel="stylesheet" href="./public/stylesheets/app.css">
+</head>
+
+<body class="dark">
+	<div class="container">
+		<div class="title">Social Media Dashboard</div>
+		<div class="subtitle">Total Followers: 23,004</div>
+		<label for="switch" class="toggle">
+			Dark Mode
+			<input type="checkbox" name="switch" id="switch" checked>
+		</label>
+		<div class="cards">
+			<div class="card facebook">
+				<div class="card__title">
+					<span class="icon"></span>
+					<div class="name">@halukalu</div>
+				</div>
+				<div class="count">1987</div>
+				<p class="text">Followers</p>
+				<div class="update up">12 Today</div>
+			</div>
+			<div class="card twitter">
+				<div class="card__title">
+					<span class="icon"></span>
+					<div class="name">@halukalu </div>
+				</div>
+				<div class="count">1044 </div>
+				<p class="text">Followers </p>
+				<div class="update up">99 Today</div>
+			</div>
+			<div class="card instagram">
+				<div class="card__title">
+					<span class="icon"></span>
+					<div class="name">@halukalu </div>
+				</div>
+				<div class="count"> 11k </div>
+				<p class="text">Followers </p>
+				<div class="update up">1099 Today</div>
+			</div>
+			<div class="card youtube">
+				<div class="card__title">
+					<span class="icon"></span>
+					<div class="name">halukalu </div>
+				</div>
+				<div class="count">8239 </div>
+				<p class="text">Subscribers </p>
+				<div class="update down">144 Today</div>
+			</div>
+		</div>
+		<div class="overview">
+			<div class="overview__title">Overview - Today</div>
+			<div class="overview__cards">
+				<div class="facebook info">
+					<div class="info__title">
+						<span class="icon"></span>
+						<p class="text">Page Views</p>
+					</div>
+					<div class="count">87</div>
+					<div class="update up">3%</div>
+
+				</div>
+				<div class="facebook info">
+					<div class="info__title">
+						<span class="icon"></span>
+						<p class="text">Likes</p>
+					</div>
+					<div class="count">52</div>
+					<div class="update down"> 2%</div>
+				</div>
+				<div class="instagram info">
+					<div class="info__title">
+						<span class="icon"></span>
+						<p class="text">Likes</p>
+					</div> 
+					<div class="count">5462</div>
+					<div class="update up"> 2257% </div>
+				</div>
+				<div class="instagram info">
+					<div class="info__title">
+						<span class="icon"></span>
+						<p class="text">Profile Views</p>
+					</div>
+					<div class="count">52k</div>
+					<div class="update up"> 1375%</div>
+				</div>
+				<div class="twitter info">
+					<div class="info__title">
+						<span class="icon"></span>
+						<p class="text">Retweets</p>
+					</div>
+					<div class="count">117</div>
+					<div class="update up"> 303%</div>
+				</div>
+				<div class="twitter info">
+					<div class="info__title">
+						<span class="icon"></span>
+						<p class="text">Likes</p>
+					</div>
+					<div class="count">507</div>
+					<div class="update up"> 553%</div>
+				</div>
+				<div class="youtube info">
+					<div class="info__title">
+						<span class="icon"></span>
+						<p class="text">Likes</p>
+					</div>
+					<div class="count">107</div>
+					<div class="update down">19%</div>
+				</div>
+				<div class="youtube info">
+					<div class="info__title">
+						<span class="icon"></span>
+						<p class="text">Total Views</p>
+					</div>
+					<div class="count">1407</div>
+					<div class="update down">12%</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<script>
+		window.onload = () => document.getElementById('switch').addEventListener('change', function () { document.body.classList.toggle('dark') })
+	</script>
+</body>
+
+</html>

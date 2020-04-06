@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap");
+* {
+  margin: 0; }
+
+.container {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 20px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center; }
+
+.title {
+  padding-top: 40px; }
+  .title .text {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #151f29;
+    font-weight: 700; }
+    .title .text span {
+      color: #4f7df3;
+      font-size: 40px; }
+
+.sub-title {
+  margin-top: 30px; }
+  .sub-title .main {
+    font-size: 40px;
+    color: #969696; }
+    .sub-title .main span {
+      font-weight: 700;
+      color: #151f29; }
+  .sub-title .second {
+    margin-top: 17px;
+    color: #151f29;
+    font-weight: 300;
+    font-size: 16px; }
+
+.form {
+  margin-top: 20px; }
+  .form label {
+    position: relative; }
+  .form .form__block {
+    width: 250px;
+    color: #151f29;
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: 1px solid;
+    border-color: #969696;
+    outline: none; }
+    .form .form__block ~ span {
+      display: none; }
+    .form .form__block::-webkit-input-placeholder {
+      color: #969696; }
+    .form .form__block::-moz-placeholder {
+      color: #969696; }
+    .form .form__block:invalid {
+      border-color: #ff5263; }
+    .form .form__block:invalid ~ span {
+      font-size: 10px;
+      display: block;
+      position: absolute;
+      top: 40px;
+      left: 20px;
+      color: #ff5263; }
+  .form .form__button {
+    background-color: #4f7df3;
+    padding: 15px 40px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    color: white; }
+    .form .form__button:hover {
+      opacity: 0.8;
+      transition: .5s; }
+
+.img {
+  background-image: url("../images/background.png");
+  width: auto;
+  height: 400px;
+  margin: 30px auto;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.links i {
+  color: #4f7df3;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  margin: 0 10px; }
+
+.copy {
+  margin-top: 30px;
+  padding-bottom: 15px;
+  width: 100%;
+  color: #969696;
+  font-size: 10px; }
+
+@media (max-width: 768px) {
+  .img {
+    width: 100%;
+    height: auto; }
+  .sub-title .main {
+    font-size: 20px; }
+  .form .form__button {
+    display: block;
+    margin: 20px auto;
+    width: 292px; } }
