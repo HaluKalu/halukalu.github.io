@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        body {
+            background-color: ivory;
+            padding: 0;
+        }
+
+        #canvas {
+            border: 1px solid red;
+        }
+
+        #canvasContainer {
+            position: relative;
+        }
+
+        #canvas,
+        #contextMenu {
+            position: absolute;
+        }
+
+        #contextMenu {
+            border: 1px solid green;
+            background: white;
+            list-style: none;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <h4>Right click on rect for context menu.</h4>
+    <div id=canvasContainer>
+        <canvas id="canvas" width=300 height=300></canvas>
+        <div id=contextMenu>
+            <div>Update button</div>
+            <div>Remove button</div>
+        </div>
+    </div>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var cw = canvas.width;
+        var ch = canvas.height;
+        function reOffset() {
+            var BB = canvas.getBoundingClientRect();
+            offsetX = BB.left;
+            offsetY = BB.top;
+        }
+        var offsetX, offsetY;
+        reOffset();
+        window.onscroll = function (e) { reOffset(); }
+        window.onresize = function (e) { reOffset(); }
+
+        var $menu = $('#contextMenu');
+
+        var rects = [];
+        rects.push({ x: 50, y: 50, width: 50, height: 50, color: "red", contextMenu: ['One red', 'Two red'] });
+        rects.push({ x: 150, y: 100, width: 75, height: 75, color: "blue", contextMenu: ['One blue', 'Two blue'] });
+
+        ctx.clearRect(0, 0, cw, ch);
+        for (var i = 0; i < rects.length; i++) {
+            var rect = rects[i];
+            ctx.beginPath();
+            ctx.fillStyle = rect.color;
+            ctx.rect(rect.x, rect.y, rect.width, rect.height);
+            ctx.fill();
+        }
+
+        $('#contextMenu').on('click', 'div', function (e) {
+            // hide the context menu
+            showContextMenu();
+            alert('Context selection: ' + $(this).text());
+        });
+
+        // hide the context menu
+        showContextMenu();
+
+        canvas.addEventListener('mousedown', handleMouseDown, false);
+        canvas.addEventListener('contextmenu', handleContextMenu, false);
+
+        function handleMouseDown(e) {
+            // hide the context menu
+            showContextMenu();
+        }
+
+        function handleContextMenu(e) {
+            // tell the browser we're handling this event
+            e.preventDefault();
+            e.stopPropagation();
+
+            // get mouse position relative to the canvas
+            var x = parseInt(e.clientX - offsetX);
+            var y = parseInt(e.clientY - offsetY);
+
+            // hide the context menu
+            showContextMenu();
+
+            // check each rect for hits
+            for (var i = 0; i < rects.length; i++) {
+                var rect = rects[i];
+                var rectRight = rect.x + rect.width;
+                var rectBottom = rect.y + rect.height;
+
+                // check each rect for hits
+                if (x >= rect.x && x <= rectRight && y >= rect.y && y <= rectBottom) {
+                    showContextMenu(rect, x, y);
+                }
+            }
+            return (false);
+        }
+
+        function showContextMenu(r, x, y) {
+            if (!r) { $menu.hide(); return; }
+            $menu.show();
+            var m = r.contextMenu;
+            $menu.css({ left: x, top: y });
+        }
+    </script>
+</body>
+
+</html>
