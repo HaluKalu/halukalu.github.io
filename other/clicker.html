@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>RGB blocks</title>
+<!--    <link href="index.css" rel="stylesheet"/> -->
+<style>
+.red {
+  background: #900;
+}
+
+.green {
+  background: #090;
+}
+
+.blue {
+  background: #009;
+}
+.wrapper{
+width: 300px;
+height: 300px;
+position: relative;
+}
+.red, .green{
+height: 150px;
+width: 150px;
+}
+.blue{
+height: 300px;
+width: 150px;
+position: absolute;
+top: 0;
+left: 150px;
+}
+</style>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="red"></div>
+      <div class="green"></div>
+      <div class="blue"></div>
+    </div>
+    <div class="dashboard">
+      <p>Красный блок кликнули <span id="r-c" class="red-counter">0</span> раз.</p>
+      <p>Зелены блок кликнули <span id="g-c" class="green-counter">0</span> раз.</p>
+      <p>Синий блок кликнули <span id="b-c" class="blue-counter">0</span> раз.</p>
+    </div>
+<script>
+	let green=0, red=0, blue=0;
+	document.getElementsByClassName("green")[0].addEventListener('click', (e)=>{green++; document.getElementById('g-c').innerText=green;})
+	document.getElementsByClassName("blue")[0].addEventListener('click', (e)=>{blue++; document.getElementById('b-c').innerText=blue;})
+	document.getElementsByClassName("red")[0].addEventListener('click', (e)=>{red++; document.getElementById('r-c').innerText=red;})
+
+</script>
+  </body>
+</html>

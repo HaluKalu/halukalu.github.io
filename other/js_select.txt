@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Js select</title>
+    <style>
+        body{
+            background: rgba(100, 100, 100, 0.9);
+            min-height: 100vh;
+            max-width: 100vw;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
+        #select{
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            font-size: 2rem;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <select name="select" id="select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="more" id="select_more">...</option>
+    </select>
+    <script>
+        const $select = document.getElementById("select");
+        const $select_more = document.getElementById("select_more");
+        $select.addEventListener("change", (el,ev)=>{
+            if($select.value === "more"){
+                let elem = document.createElement("option");
+                elem.innerText = $select.children.length;
+                elem.value = $select.children.length;
+                $select_more.insertAdjacentElement("beforebegin", elem);
+                $select.value = $select.children.length-1;
+            }
+        });
+    </script>
+</body>
+</html>
