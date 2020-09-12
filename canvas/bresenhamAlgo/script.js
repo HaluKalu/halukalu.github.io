@@ -10,7 +10,7 @@ var drawed = false;
 
 function setPixel(x, y) {
     ctx.fillStyle = "rgba(" + color.r + "," + color.g + "," + color.b + "," + color.a + ")";
-    ctx.fillRect(x, y, 1, 1);
+    ctx.fillRect(x, y, 5, 5);
 }
 
 const plot = function(x, y) { //кисточка - ставит пиксель своего цвета
@@ -25,7 +25,7 @@ const changeColor = function(){
         a: 1};
 }
 const drawNextLine = function(){
-    color = {r: 255, g: 0, b: 0, a: 1};
+    color = {r: 250, g: 0, b: 0, a: 1};
     if(drawed){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawed = false;
