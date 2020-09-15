@@ -8,7 +8,7 @@ var x_0 = 0, y_0 = 0
 
 var color = { r: 0, g: 0, b: 0, a: 1 };
 
-const plot = function (x, y) { //кисточка - ставит пиксель своего цвета
+const plot = function (x, y) { 
     if (isFinite(x) && isFinite(y)) {
         setPixel(x, y);
     }
@@ -20,6 +20,7 @@ function setPixel(x, y) {
 }
 
 canvas.addEventListener('mousedown', (evt) => {
+    if(evt.button !== 0) return;
     x_0 = x = evt.offsetX;
     y_0 = y = evt.offsetY;
     isDrawing = true;
@@ -27,7 +28,7 @@ canvas.addEventListener('mousedown', (evt) => {
 
 canvas.addEventListener('mousemove', (evt) => {
     if (isDrawing) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(Math.min(x_0, x), Math.min(y_0, y), Math.abs(x_0 - x) + 10, Math.abs(y_0 - y) + 10);
         x = evt.offsetX;
         y = evt.offsetY;
         drawLine(x_0, y_0, x_0, y);
@@ -40,8 +41,9 @@ canvas.addEventListener('mousemove', (evt) => {
 canvas.addEventListener('mouseup', (evt) => {
     if (isDrawing) {
         isDrawing = false;
+        console.log(x_0, y_0, x, y);
         drawEllipsoid(x_0, y_0, x, y);
-        drawCircle(x_0, y_0, x, y);
+        // drawCircle(x_0, y_0, x, y);
     }
 })
 
@@ -112,7 +114,6 @@ function drawEllipsoid(x0, y0, x1, y1) {
     let four_b_2 = b2 << 2;
     let d = two_a_2 * ((row - 1) * (row)) + a2 + two_b_2 * (1 - a2);
     while (a2 * row > b2 * col) {
-        console.log(x, y, col, row);
         setPixel(x + col, y + row);
         setPixel(x + col, y - row);
         setPixel(x - col, y + row);
