@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/home/slilik/prjcts/react-admin/admin/build/static/css/main.649161c3.chunk.css",
-    "main.js": "/home/slilik/prjcts/react-admin/admin/build/static/js/main.fe705862.chunk.js",
-    "main.js.map": "/home/slilik/prjcts/react-admin/admin/build/static/js/main.fe705862.chunk.js.map",
-    "runtime-main.js": "/home/slilik/prjcts/react-admin/admin/build/static/js/runtime-main.240993c2.js",
-    "runtime-main.js.map": "/home/slilik/prjcts/react-admin/admin/build/static/js/runtime-main.240993c2.js.map",
-    "static/js/2.4fb3b2d3.chunk.js": "/home/slilik/prjcts/react-admin/admin/build/static/js/2.4fb3b2d3.chunk.js",
-    "static/js/2.4fb3b2d3.chunk.js.map": "/home/slilik/prjcts/react-admin/admin/build/static/js/2.4fb3b2d3.chunk.js.map",
-    "index.html": "/home/slilik/prjcts/react-admin/admin/build/index.html",
-    "precache-manifest.1f5c74f5339985df0fb781caa8951552.js": "/home/slilik/prjcts/react-admin/admin/build/precache-manifest.1f5c74f5339985df0fb781caa8951552.js",
-    "service-worker.js": "/home/slilik/prjcts/react-admin/admin/build/service-worker.js",
-    "static/css/main.649161c3.chunk.css.map": "/home/slilik/prjcts/react-admin/admin/build/static/css/main.649161c3.chunk.css.map",
-    "static/js/2.4fb3b2d3.chunk.js.LICENSE.txt": "/home/slilik/prjcts/react-admin/admin/build/static/js/2.4fb3b2d3.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/home/slilik/prjcts/react-admin/admin/build/static/media/back.a85d5cf1.jpeg",
-    "static/media/simple.svg": "/home/slilik/prjcts/react-admin/admin/build/static/media/simple.964e4d84.svg",
-    "static/media/user.svg": "/home/slilik/prjcts/react-admin/admin/build/static/media/user.bc9581a8.svg"
+    "main.css": "/sites/react/simple_site/static/css/main.f4669b55.chunk.css",
+    "main.js": "/sites/react/simple_site/static/js/main.aa21b08f.chunk.js",
+    "main.js.map": "/sites/react/simple_site/static/js/main.aa21b08f.chunk.js.map",
+    "runtime-main.js": "/sites/react/simple_site/static/js/runtime-main.187613d1.js",
+    "runtime-main.js.map": "/sites/react/simple_site/static/js/runtime-main.187613d1.js.map",
+    "static/js/2.4fb3b2d3.chunk.js": "/sites/react/simple_site/static/js/2.4fb3b2d3.chunk.js",
+    "static/js/2.4fb3b2d3.chunk.js.map": "/sites/react/simple_site/static/js/2.4fb3b2d3.chunk.js.map",
+    "index.html": "/sites/react/simple_site/index.html",
+    "precache-manifest.a4a2ecdcb4b11ca356052fa5b620b1be.js": "/sites/react/simple_site/precache-manifest.a4a2ecdcb4b11ca356052fa5b620b1be.js",
+    "service-worker.js": "/sites/react/simple_site/service-worker.js",
+    "static/css/main.f4669b55.chunk.css.map": "/sites/react/simple_site/static/css/main.f4669b55.chunk.css.map",
+    "static/js/2.4fb3b2d3.chunk.js.LICENSE.txt": "/sites/react/simple_site/static/js/2.4fb3b2d3.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/sites/react/simple_site/static/media/back.a85d5cf1.jpeg",
+    "static/media/simple.svg": "/sites/react/simple_site/static/media/simple.964e4d84.svg",
+    "static/media/user.svg": "/sites/react/simple_site/static/media/user.bc9581a8.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.240993c2.js",
+    "static/js/runtime-main.187613d1.js",
     "static/js/2.4fb3b2d3.chunk.js",
-    "static/css/main.649161c3.chunk.css",
-    "static/js/main.fe705862.chunk.js"
+    "static/css/main.f4669b55.chunk.css",
+    "static/js/main.aa21b08f.chunk.js"
   ]
 }
