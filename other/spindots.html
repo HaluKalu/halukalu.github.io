@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Error</title>
+    <title>Spin dots</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
         * {
@@ -43,52 +43,12 @@
             border-radius: 50%;
             background-color: white;
             margin: 7px auto;
-        }
-
-        .dot-1 {
-            animation: spin 1016ms infinite ease-in-out alternate;
-        }
-
-        .dot-2 {
-            animation: spin 1024ms infinite ease-in-out alternate;
-        }
-
-        .dot-3 {
-            animation: spin 1032ms infinite ease-in-out alternate;
-        }
-
-        .dot-4 {
-            animation: spin 1040ms infinite ease-in-out alternate;
-        }
-
-        .dot-5 {
-            animation: spin 1048ms infinite ease-in-out alternate;
-        }
-
-        .dot-6 {
-            animation: spin 1056ms infinite ease-in-out alternate;
-        }
-
-        .dot-7 {
-            animation: spin 1064ms infinite ease-in-out alternate;
-        }
-
-        .dot-8 {
-            animation: spin 1072ms infinite ease-in-out alternate;
-        }
-
-        .dot-9 {
-            animation: spin 1080ms infinite ease-in-out alternate;
-        }
-
-        .dot-10 {
-            animation: spin 1088ms infinite ease-in-out alternate;
+            animation: spin var(--time) infinite ease-in-out alternate;
         }
 
         @keyframes spin {
             0%,
             100% {
-                /* transform: translateX(-80px); */
                 transform: translate3d(-80px, 0, 0);
                 opacity: 1;
                 box-shadow: 0 0 10px 0 white;
@@ -96,7 +56,6 @@
             25% {
                 opacity: 0.5;
                 box-shadow: none;
-                /* transform: translate3d(0, 0, 1px); */
             }
             50% {
                 transform: translate3d(80px, 0, 0);
@@ -106,7 +65,6 @@
             75% {
                 box-shadow: none;
                 opacity: 0.5;
-                /* transform: translate3d(0, 0, 2px); */
             }
 
         }
@@ -114,19 +72,20 @@
 </head>
 
 <body>
-    <div class="frame">
-        <div class="dot dot-1"></div>
-        <div class="dot dot-2"></div>
-        <div class="dot dot-3"></div>
-        <div class="dot dot-4"></div>
-        <div class="dot dot-5"></div>
-        <div class="dot dot-6"></div>
-        <div class="dot dot-7"></div>
-        <div class="dot dot-8"></div>
-        <div class="dot dot-9"></div>
-        <div class="dot dot-10"></div>
+    <div class="frame" id="frame">
     </div>
-
+    <script>
+        function genDots(){
+            const frame=document.getElementById('frame');
+            for(let i = 0; i < 10; i++){
+                let dot = document.createElement('div');
+                dot.classList.add('dot');
+                dot.style = `--time: ${1016 + i*8}ms`;
+                frame.appendChild(dot);
+            }
+        }
+        genDots();
+    </script>
 </body>
 
 </html>

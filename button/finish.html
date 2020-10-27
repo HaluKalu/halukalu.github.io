@@ -47,8 +47,8 @@
             width: 60px;
             height: 60px;
             z-index: 2;
-            top: 170px;
-            left: 170px;
+            top: 50%;
+            left: 50%;
             fill: none;
             stroke: #fff;
             stroke-width: 2px;
@@ -56,8 +56,8 @@
             stroke-dasharray: 183 183;
             stroke-dashoffset: 183;
             pointer-events: none;
-            transform: rotate(-90deg);
-            animation: loader 5s infinite linear;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            animation: loader 3s infinite linear;
         }
 
         @keyframes loader {
@@ -67,12 +67,12 @@
             50% {
                 stroke-dashoffset: 0;
                 stroke-dasharray: 183;
-                transform: rotate(-90deg) scale(1);
+                transform: translate(-50%, -50%) rotate(-90deg) scale(1);
                 opacity: 1;
             }
             90%, 100% {
                 stroke-dasharray: 500 500;
-                transform: rotate(-90deg) scale(2);
+                transform: translate(-50%, -50%) rotate(-90deg) scale(2);
                 opacity: 0;
             }
         }
@@ -80,10 +80,7 @@
 </head>
 
 <body>
-    <a style="color: rgba(255, 255, 255, 0.5); text-decoration:none;" href="https://100dayscss.com/?dayIndex=23" target="_blank">link</a>
     <div class="frame">
-            <input type="checkbox" id="button" class="hidden"/>
-            <label for="button" class="button">Finish<img src="https://100dayscss.com/codepen/checkmark-green.svg"/></label>
             <svg class="circle">
                 <circle cx="30" cy="30" r="29"/>
             </svg>
