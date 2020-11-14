@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vc.ru</title>
+  <link rel="stylesheet" href="dist/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="left"></div>
+    <div class="main">
+      <div class="wrapper">
+        <section id="part1" class="section">
+          <p class="title">Сколько вы откладываете в месяц?</p>
+          <p class="text">Ответьте и узнаете, сколько копят другие.</p>
+          <div class="range__block">
+            <span>0 ₽</span>
+            <label for="range" class="range__label">
+              <span class="range__size hidden" id="range__money">0 ₽</span>
+              <input type="range" name="range" id="range" min="0" max="50000" value="0" step="100">
+            </label>
+            <span>50 000 ₽</span>
+          </div>
+        </section>
+        <section id="part2" class="section hidden" style="display: none;">
+          <p class="title">Вы откладываете <span id="money"> 0 </span>₽ в месяц. </p>
+          <p class="title">За три года вы бы заработали:</p>
+          <div class="money__block">
+            <div class="money__part">
+              <div class="money" id="money1">
+
+              </div>
+              <p class="title title__money" id="money1_price"></p>
+              <p class="text">если откладывать под матрас <button class="info">?<span class="tooltip">В этом мало смысла
+                    — такие накопления «съедает» инфляция</span></button></p>
+            </div>
+            <div class="money__part">
+              <div class="money" id="money2">
+
+              </div>
+              <p class="title title__money" id="money2_price"></p>
+              <p class="text">если откладывать на депозит<button class="info">?<span class="tooltip">Ставки по вкладам
+                    различны в разных
+                    банках и зависят от многих факторов,
+                    в частности, от ключевой ставки
+                    Центрального банка РФ<a
+                      href="https://vc.ru/promo/76505-alfa-kapital-yuridicheskaya-informaciya?ea=678fa71362d1b64dda32a1e6c54730abd442d756633f11fa1548bfcc17e7bfb5#1">¹</a>.</span></button>
+              </p>
+            </div>
+            <div class="money__part">
+              <div class="money" id="money3">
+
+              </div>
+              <p class="title title__money" id="money3_price"></p>
+              <p class="text">если инвестировать в ПИФ «Альфа-Капитала»<button class="info">?<span class="tooltip">Вы
+                    становитесь инвестором набора
+                    компаний, который определяют
+                    профессиональные управляющие.
+                    Они решают, когда покупать
+                    и продавать ценные бумаги, чтобы
+                    обеспечить инвестиционный доход.
+                    Купить или продать паи фонда можно
+                    в любой момент<a
+                      href="https://vc.ru/promo/76505-alfa-kapital-yuridicheskaya-informaciya?ea=678fa71362d1b64dda32a1e6c54730abd442d756633f11fa1548bfcc17e7bfb5#2">²</a>.</span></button>
+              </p>
+            </div>
+          </div>
+        </section>
+        <div id="part3" class="big__block hidden" style="display: none;">
+          <section class="other__people hidden">
+            <div class="circle circle_200 mb10">
+              <svg class="circle__money"  id="circle_money">
+              </svg>
+              <p class="text text__money" id="text_money"></p>
+            </div>
+            <p class="text mb25">в среднем откладывают читатели vc.ru</p>
+            <div class="infographics">
+              <div class="circle__block">
+                <div class="circle">
+                  <svg id="infograph1" width="126" height="126" viewPort="0 0 100 100" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle r="55" cx="63" cy="63" fill="#FEEBEF">
+                    </circle>
+                    <circle class="bar" r="55" cx="63" cy="63" fill="transparent" stroke-dasharray="345"
+                      stroke-dashoffset="345"></circle>
+                  </svg>
+                </div>
+                <p class="title title__red" id="infograph_text1">0%</p>
+                <p class="text">читателей откладывают больше 1000 ₽ в месяц</p>
+              </div>
+              <div class="circle__block">
+                <div class="circle">
+                  <svg id="infograph2" width="126" height="126" viewPort="0 0 100 100" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle r="55" cx="63" cy="63" fill="#FEEBEF">
+                    </circle>
+                    <circle class="bar" r="55" cx="63" cy="63" fill="transparent" stroke-dasharray="345"
+                      stroke-dashoffset="345"></circle>
+                  </svg>
+                </div>
+                <p class="title title__red" id="infograph_text2">0%</p>
+                <p class="text">читателей откладывают больше 10 000 ₽ в месяц</p>
+              </div>
+            </div>
+          </section>
+          <button class="full__btn" onclick="dropdown(this)">
+            <span id="btn__txt">А как в среднем у читателей vc.ru?</span>
+            <svg width="16" height="7" viewBox="0 0 16 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L7.55598 5.95238L14.0892 1" stroke="#FE4D4A" stroke-width="2" stroke-miterlimit="10"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="additional">
+            <p class="title">Как начать инвестировать? </p><a class="btn"
+              href="https://alfabank.ru/make-money/investments/">Узнать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right"></div>
+  </div>
+  <svg>
+
+  </svg>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
