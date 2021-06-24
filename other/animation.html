@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Onclick animation</title>
+	<style>
+		body {
+			background-color: darkcyan;
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+		}
+
+		.wrapper {
+			width: 300px;
+			height: 300px;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: rgb(209, 134, 35);
+			overflow: hidden;
+		}
+
+		.overlay {
+			position: absolute;
+			height: 200%;
+			width: 200%;
+			background-color: rgb(226, 182, 38);
+			transition: 1.2s;
+			transform: translate(-25%, -25%) scale(0);
+			border-radius: 50%;
+			opacity: 0;
+		}
+
+		.overlay.active {
+			opacity: 1;
+			transform: translate(-25%, -25%);
+		}
+
+		.box {
+			position: absolute;
+			height: 25px;
+			width: 25px;
+			background-color: whitesmoke;
+			box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 10%),
+				-1px -1px 5px 1px rgb(0 0 0 / 10%),
+				-1px 1px 5px 1px rgb(0 0 0 / 10%),
+				1px -1px 5px 1px rgb(0 0 0 / 10%);
+			top: 50%;
+			left: 50%;
+			transform: rotate(0deg) translate(-50%, -50%);
+			transform-origin: 0 0;
+			transition: 1.2s;
+		}
+
+		.box.active {
+			border-radius: 50%;
+			transform: rotate(360deg) translate(-50%, -50%);
+		}
+
+		.circle {
+			position: absolute;
+			height: 75px;
+			width: 75px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(0);
+			border-radius: 50%;
+			transition: 1s;
+			background-color: transparent;
+			border: 4px solid whitesmoke;
+		}
+
+		.circle.active {
+			opacity: 0;
+			transform: translate(-50%, -50%) scale(1);
+		}
+
+		.particles {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			width: 150px;
+			height: 150px;
+			transform: translate(-50%, -50%);
+		}
+
+		.particle {
+			height: 35px;
+			width: 3px;
+			background-color: whitesmoke;
+			position: absolute;
+			transform: rotate(calc(var(--index) * 3.6 + 0deg)) translate(-50%, -50%) scale(0);
+			top: calc(50% - 85px);
+			left: 50%;
+			transform-origin: 0 85px;
+			transition: 1.2s;
+		}
+		.particle.active {
+			opacity: 0;
+			transform: rotate(calc(var(--index) * 3.6 + 0deg)) translate(-50%, -50%) scale(1);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper" onclick="activate()">
+		<div class="overlay"></div>
+		<div class="box"></div>
+		<div class="circle"></div>
+		<div class="particles">
+			<div class="particle" style="--index: 0deg; --step: 0px"></div>
+			<div class="particle" style="--index: 10deg; --step: 1px"></div>
+			<div class="particle" style="--index: 20deg; --step: 2px"></div>
+			<div class="particle" style="--index: 30deg; --step: 3px"></div>
+			<div class="particle" style="--index: 40deg; --step: 4px"></div>
+			<div class="particle" style="--index: 50deg; --step: 5px"></div>
+			<div class="particle" style="--index: 60deg; --step: 6px"></div>
+			<div class="particle" style="--index: 70deg; --step: 7px"></div>
+			<div class="particle" style="--index: 80deg; --step: 8px"></div>
+			<div class="particle" style="--index: 90deg; --step: 9px"></div>
+		</div>
+	</div>
+	<script>
+		const overlay = document.getElementsByClassName("overlay")[0];
+		const box = document.getElementsByClassName("box")[0];
+		const circle = document.getElementsByClassName("circle")[0];
+		const particles = document.getElementsByClassName("particle");
+		function activate() {
+			overlay.classList.toggle("active");
+			box.classList.toggle("active");
+			circle.classList.toggle("active");
+			for(let i = 0; i < particles.length; i++) particles[i].classList.toggle("active");
+		}
+	</script>
+</body>
+
+</html>
